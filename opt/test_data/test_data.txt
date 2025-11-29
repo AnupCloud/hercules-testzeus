@@ -1,1 +1,1 @@
-echo '{"search_term": "Hercules OSS"}' > opt/test_data/test_data.json
+search_term: Palermo

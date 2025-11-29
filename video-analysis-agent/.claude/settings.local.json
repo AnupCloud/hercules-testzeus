@@ -19,7 +19,10 @@
       "Bash(find:*)",
       "Bash(tree:*)",
       "Bash(git remote:*)",
-      "Bash(git remote add:*)"
+      "Bash(git remote add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd video analysis agent with comprehensive documentation\n\n- LangGraph-based agent for validating Hercules test execution\n- Analyzes planning logs, video recordings, and test outputs\n- Detects deviations between planned and executed steps\n- Includes sample inputs and comprehensive README\n- Setup using uv package manager for fast dependency management\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

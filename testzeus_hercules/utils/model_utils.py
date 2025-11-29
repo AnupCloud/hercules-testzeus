@@ -43,16 +43,10 @@ def adapt_llm_params_for_model(model_name: str, llm_config: Dict[str, Any]) -> D
             params["max_completion_tokens"] = 4096
 
     elif model_name.startswith(("claude", "anthropic")):
-        # Claude models use max_tokens_to_sample
-        if "max_tokens" in params and "max_tokens_to_sample" not in params:
-            params["max_tokens_to_sample"] = params.pop("max_tokens")
-            logger.warning(
-                "Deprecated param 'max_tokens' supplied for %s; auto-translating to 'max_tokens_to_sample'.",
-                model_name,
-            )
-        # Set default if neither is present
-        if "max_tokens_to_sample" not in params:
-            params["max_tokens_to_sample"] = 4096
+        # Claude models use max_tokens (Messages API)
+        # Ensure max_tokens is present
+        if "max_tokens" not in params:
+             params["max_tokens"] = 4096
 
     else:
         # Other models use max_tokens

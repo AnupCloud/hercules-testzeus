@@ -1,3 +1,4 @@
+import ast
 import asyncio
 import inspect
 import traceback
@@ -264,6 +265,24 @@ async def bulk_enter_text(
     add_event(EventType.INTERACTION, EventData(detail="BulkSetInputValue"))
     results: List[Dict[str, str]] = []
     logger.info("Executing bulk set input value command")
+    
+    # Handle case where entries is passed as a string (e.g., from LLM agent)
+    if isinstance(entries, str):
+        try:
+            # Parse string representation of list/tuples
+            parsed = ast.literal_eval(entries)
+            # Convert tuples to lists if needed
+            if parsed and isinstance(parsed[0], tuple):
+                entries = [list(item) for item in parsed]
+            elif isinstance(parsed, list):
+                entries = parsed
+            else:
+                logger.error(f"Unable to parse entries string: {entries}")
+                return [{"selector": "unknown", "result": f"Error: Invalid entries format: {entries}"}]
+        except (ValueError, SyntaxError) as e:
+            logger.error(f"Error parsing entries string '{entries}': {e}")
+            return [{"selector": "unknown", "result": f"Error: Failed to parse entries: {e}"}]
+    
     for entry in entries:
         if len(entry) != 2:
             logger.error(f"Invalid entry format: {entry}. Expected [selector, value]")
