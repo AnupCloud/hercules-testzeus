@@ -22,7 +22,9 @@
       "Bash(git remote add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd video analysis agent with comprehensive documentation\n\n- LangGraph-based agent for validating Hercules test execution\n- Analyzes planning logs, video recordings, and test outputs\n- Detects deviations between planned and executed steps\n- Includes sample inputs and comprehensive README\n- Setup using uv package manager for fast dependency management\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd test scripts, configuration updates, and supporting logs\n\n- Add custom LLM agent configuration\n- Add test recording scripts for Converse, Levi''s, and Puma\n- Update enter_text_using_selector tool\n- Update model utilities\n- Add supporting logs and test data\n- Include hiring assignment documentation\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
