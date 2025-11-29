@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(cd:*)",
+      "Bash(source:*)",
+      "Bash(python main.py:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(poetry run python:*)",
+      "Bash(tee:*)",
+      "Bash(pgrep:*)",
+      "Bash(pkill:*)",
+      "Bash(xargs cat:*)",
+      "Bash(mediainfo:*)",
+      "Bash(xargs:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(git remote:*)",
+      "Bash(git remote add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

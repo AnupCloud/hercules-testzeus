@@ -1,0 +1,50 @@
+# Video Analysis Agent
+
+# Virtual environments
+.venv/
+venv/
+venv_*/
+env/
+ENV/
+
+# Python cache
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+
+# Output directories
+output/
+uploads/
+*_test_inputs/
+!sample_inputs/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Video recordings (keep only samples)
+*.webm
+*.mp4
+!sample_inputs/*.webm
+!sample_inputs/*.mp4
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
